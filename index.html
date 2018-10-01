@@ -1,0 +1,51 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script crossorigin src=“https://unpkg.com/react@16/umd/react.development.js“></script>
+    <script crossorigin src=“https://unpkg.com/react-dom@16/umd/react-dom.development.js”></script>
+    <script crossorigin src=“https://unpkg.com/babel-standalone@6.26.0/babel.js”></script>
+
+    <script typle='text/babel'>
+
+    const BartComponent = props => {
+      // props created reference
+        const{bart} = props;
+        return (
+            <div>
+            <h3> Name: {bart.name}</h3>
+            <p>Age: {bart.age} </p>
+            <p>Identity: {bart.identity}</p>
+            <p>Bestfriend: {bart.best_friend}</p>
+
+            </div>
+        )
+    }
+    const App = () => {
+        const BartProfile ={
+            name: 'Bartholomew Jo jo',
+            identity: 'troublemaker',
+            age: '10',
+            family: ['Homer', 'Marge', 'Lisa'],
+            catchphrases: ['Aye Carumba', 'Eat my shorts', 'I didnt do it'],
+            best_friend: 'Milhouse Van Houten',
+        };
+        return (
+        <div>
+        <BartComponent bart = {BartProfile} />
+        </div>
+        )
+        };
+    ReactDOM.render(<App />, document.getElementByID('root'));
+</script>
+
+</body>
+</html>
